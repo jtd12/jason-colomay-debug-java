@@ -7,8 +7,23 @@ import java.io.FileWriter;
 public class AnalyticsCounter {
 	private static int headacheCount = 0;	
 	private static int rashCount = 0;		
-	private static int pupilCount = 0;		
+	private static int pupilCount = 0;
+
+	public AnalyticsCounter(ISymptomReader reader, ISymptomWriter writer)
+	{}		
 	
+	public List<String> getSymptoms()
+	{}
+	
+	public Map<String,Integer> countSymptoms(List<String> symptoms)
+	{}
+
+	public Map<String,Integer> sortSymptoms(List<String> symptoms)
+	{}
+
+	public void writeSymptoms(Map<String,Integer> symptoms)
+	{}
+
 	public static void main(String args[]) throws Exception {
 		// first get input
 		BufferedReader reader = new BufferedReader (new FileReader("data/symptoms.txt"));
