@@ -24,16 +24,14 @@ public class Main {
 
 		ISymptomWriter symptomWriter=new WriteSymptomDataToFile("data/symptoms.txt");
 		
-		AnalyticsCounter counter = new AnalyticsCounter(symptomReader, symptomWriter);
-		
-		counter.analyzeSpecificSymptoms();
-
 		/*
 		* Instanciation de l'objet AnalyticsCounter 
 		@param décrit la lecture des symptomes et l'ecriture des symptomes
 		*/ 
 		
-		AnalyticsCounter analytics=new AnalyticsCounter(symptomReader,symptomWriter);
+		AnalyticsCounter counter = new AnalyticsCounter(symptomReader, symptomWriter);
+		
+		counter.analyzeSpecificSymptoms();
 
 		/*
 		* appel de la méthode getSymptoms() qui lit une liste d'entrée dans un fichier liée aux differents symptômes
@@ -52,21 +50,21 @@ public class Main {
 		* @param liste de tous les symptomes sous forme de chaines de caractères
 		*/
 
-		analytics.countSymptoms(symptoms);
+		counter.countSymptoms(symptoms);
 		
 		/*
 		* appel de la méthode sortSymptoms() qui trie la liste des symptomes et d'occurences par ordre alphabétique
 		* @param liste de tous les symptomes sous forme de chaines de caractères
 		*/
 
-		analytics.sortSymptoms(symptoms);
+		counter.sortSymptoms(symptoms);
 
 		/*
 		* appel de la méthode writeSymptoms qui écrit le résultat dans le fichier de sortie
 		* @param la description d'une map contenant les symptomes et leurs fréquences
 		*/
 		
-		analytics.writeSymptoms(listSymptoms);
+		counter.writeSymptoms(listSymptoms);
 		
 		}
 	  
